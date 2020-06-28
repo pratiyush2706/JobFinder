@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import JobFinder from './pages/JobFinder';
 
 function App() {
   return (
     <div className="App">
-      App
+      <JobFinder />
     </div>
   );
 }
