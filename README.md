@@ -14,5 +14,5 @@ Offline network detection
 ## CodeSandbox url
 https://wofn9.csb.app/
 
-#3 How it looks
+## How it looks
 https://www.dropbox.com/s/k5abfk1mi9d5cka/Screenshot%202020-06-29%2001.05.55.png?dl=0
