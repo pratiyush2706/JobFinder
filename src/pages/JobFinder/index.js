@@ -5,10 +5,12 @@ import Tabs from '../../components/Tabs';
 import Background from '../../assets/whatsappBackground.png';
 import SendMessageIcon from '../../assets/sendMessage.svg';
 import { isEmpty } from '../../utils';
+import Offline from '../../components/Offline';
 
 const JobFinder = () => {
   const [userMessage, setUserMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
+  const [isOffline, setIsoffline] = useState(false);
 
   const onMessage = () => {
     return Promise.resolve({
@@ -35,10 +37,19 @@ const JobFinder = () => {
     setMessageList(messages);
   };
 
+  if (typeof navigator !== 'undefined' && !navigator.onLine && !isOffline) {
+    setIsoffline(true);
+  } else if (typeof navigator !== 'undefined' && navigator.onLine && isOffline) {
+    setIsoffline(false);
+  }
+
   return (
     <div className={style.container}>
       <div className={style.header}>
         <Header />
+        {isOffline && (
+          <Offline />
+        )}
         <Tabs />
       </div>
       <div
